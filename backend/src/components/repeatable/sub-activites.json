@@ -1,0 +1,46 @@
+{
+  "collectionName": "components_repeatable_sub_activites",
+  "info": {
+    "displayName": "sub_activites"
+  },
+  "options": {},
+  "attributes": {
+    "island_name": {
+      "type": "string",
+      "required": true
+    },
+    "place_name": {
+      "type": "string",
+      "required": true
+    },
+    "short_description": {
+      "type": "text",
+      "required": true
+    },
+    "type": {
+      "type": "string",
+      "required": true
+    },
+    "hero_section": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "Price": {
+      "type": "decimal",
+      "required": true
+    },
+    "gallery": {
+      "type": "media",
+      "multiple": true,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
+    }
+  },
+  "config": {}
+}

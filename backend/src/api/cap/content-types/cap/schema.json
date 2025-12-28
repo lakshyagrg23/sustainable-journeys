@@ -1,0 +1,39 @@
+{
+  "kind": "collectionType",
+  "collectionName": "caps",
+  "info": {
+    "singularName": "cap",
+    "pluralName": "caps",
+    "displayName": "cap"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "short_description": {
+      "type": "string"
+    },
+    "photo": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images",
+        "files"
+      ]
+    },
+    "price": {
+      "type": "decimal",
+      "required": true
+    },
+    "seats": {
+      "type": "integer",
+      "required": true
+    }
+  }
+}

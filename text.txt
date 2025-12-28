@@ -1,0 +1,13 @@
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-NKWGSR0WYX"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-NKWGSR0WYX');
+</script>
+
+
+Measurement Id=> G-NKWGSR0WYX
+Stream ID=>12227827716

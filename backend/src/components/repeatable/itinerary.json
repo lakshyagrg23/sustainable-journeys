@@ -1,0 +1,31 @@
+{
+  "collectionName": "components_repeatable_itineraries",
+  "info": {
+    "displayName": "itinerary"
+  },
+  "options": {},
+  "attributes": {
+    "Day": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "text",
+      "required": true
+    },
+    "photo": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "hotel_name": {
+      "type": "string"
+    },
+    "short_description": {
+      "type": "text"
+    }
+  },
+  "config": {}
+}

@@ -1,0 +1,27 @@
+{
+  "collectionName": "components_repeatable_attractions",
+  "info": {
+    "displayName": "Attractions"
+  },
+  "options": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "short_description": {
+      "type": "text"
+    },
+    "rating": {
+      "type": "decimal"
+    },
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
+    }
+  },
+  "config": {}
+}

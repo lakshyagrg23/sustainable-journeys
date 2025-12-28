@@ -1,0 +1,90 @@
+{
+  "kind": "collectionType",
+  "collectionName": "packages",
+  "info": {
+    "singularName": "package",
+    "pluralName": "packages",
+    "displayName": "Package"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "minLength": 2,
+      "required": true
+    },
+    "short_description": {
+      "type": "string",
+      "minLength": 20,
+      "required": true
+    },
+    "duration": {
+      "type": "string",
+      "required": true
+    },
+    "discount": {
+      "type": "decimal"
+    },
+    "price": {
+      "type": "decimal",
+      "required": true
+    },
+    "person": {
+      "type": "string"
+    },
+    "original_price": {
+      "type": "decimal",
+      "required": true
+    },
+    "rating": {
+      "type": "integer"
+    },
+    "number_of_reviews": {
+      "type": "integer"
+    },
+    "images": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "detailed_description": {
+      "type": "richtext",
+      "required": true,
+      "minLength": 100
+    },
+    "gallery": {
+      "type": "media",
+      "multiple": true,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "Whats_Included": {
+      "type": "component",
+      "component": "repeatable.whats-included-item",
+      "repeatable": true
+    },
+    "itinerary": {
+      "type": "component",
+      "component": "repeatable.itinerary",
+      "repeatable": true
+    },
+    "category": {
+      "type": "enumeration",
+      "required": true,
+      "enum": [
+        "family",
+        "honeymoon",
+        "adventure",
+        "group"
+      ]
+    }
+  }
+}

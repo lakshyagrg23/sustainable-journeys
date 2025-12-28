@@ -1,0 +1,13 @@
+{
+  "collectionName": "components_repeatable_amenities",
+  "info": {
+    "displayName": "Amenities"
+  },
+  "options": {},
+  "attributes": {
+    "Amenities": {
+      "type": "string"
+    }
+  },
+  "config": {}
+}

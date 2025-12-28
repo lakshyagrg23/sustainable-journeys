@@ -1,0 +1,67 @@
+{
+  "kind": "collectionType",
+  "collectionName": "hotels",
+  "info": {
+    "singularName": "hotel",
+    "pluralName": "hotels",
+    "displayName": "hotel"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "photo": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images",
+        "files"
+      ]
+    },
+    "short_description": {
+      "type": "string",
+      "required": true
+    },
+    "price": {
+      "type": "decimal",
+      "required": true
+    },
+    "category": {
+      "type": "enumeration",
+      "required": true,
+      "enum": [
+        "luxury",
+        "budget",
+        "premium"
+      ]
+    },
+    "location": {
+      "type": "string",
+      "required": true
+    },
+    "rating": {
+      "type": "decimal",
+      "required": true
+    },
+    "hotel_rooms": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::hotel-room.hotel-room",
+      "mappedBy": "hotel"
+    },
+    "gallery": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files"
+      ]
+    }
+  }
+}

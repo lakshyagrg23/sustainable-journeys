@@ -1,0 +1,55 @@
+{
+  "kind": "collectionType",
+  "collectionName": "activities",
+  "info": {
+    "singularName": "activity",
+    "pluralName": "activities",
+    "displayName": "Activity"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "minLength": 1,
+      "required": true
+    },
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images",
+        "files"
+      ]
+    },
+    "duration": {
+      "type": "string"
+    },
+    "tags": {
+      "type": "string"
+    },
+    "short_description": {
+      "type": "text"
+    },
+    "category": {
+      "type": "enumeration",
+      "required": true,
+      "enum": [
+        "adventure",
+        "waterActivity",
+        "beach",
+        "travel",
+        "sightseeing"
+      ]
+    },
+    "sub_activites": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::sub-activite.sub-activite",
+      "mappedBy": "activity"
+    }
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_repeatable_faqs",
+  "info": {
+    "displayName": "FAQ"
+  },
+  "options": {},
+  "attributes": {
+    "question": {
+      "type": "string"
+    },
+    "answer": {
+      "type": "text"
+    }
+  },
+  "config": {}
+}

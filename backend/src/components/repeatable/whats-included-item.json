@@ -1,0 +1,33 @@
+{
+  "collectionName": "components_repeatable_whats_included_items",
+  "info": {
+    "displayName": "Whats_Included"
+  },
+  "options": {},
+  "attributes": {
+    "item": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "emoji": {
+      "type": "string",
+      "required": false
+    },
+    "icons": {
+      "type": "enumeration",
+      "enum": [
+        "transportation",
+        "photoshoot",
+        "tickets",
+        "accommodation",
+        "cruise",
+        "sightseeing",
+        "bike",
+        "breakfast"
+      ]
+    }
+  },
+  "config": {}
+}

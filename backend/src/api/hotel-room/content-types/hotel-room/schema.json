@@ -1,0 +1,74 @@
+{
+  "kind": "collectionType",
+  "collectionName": "hotel_rooms",
+  "info": {
+    "singularName": "hotel-room",
+    "pluralName": "hotel-rooms",
+    "displayName": "hotel_room"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "photo": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images",
+        "files"
+      ]
+    },
+    "new_category": {
+      "type": "string"
+    },
+    "category": {
+      "type": "enumeration",
+      "required": false,
+      "enum": [
+        "Luxury",
+        "Budget",
+        "Standard",
+        "Deluxe"
+      ]
+    },
+    "hotel": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::hotel.hotel",
+      "inversedBy": "hotel_rooms"
+    },
+    "price": {
+      "type": "biginteger",
+      "required": true
+    },
+    "Amenities": {
+      "type": "component",
+      "component": "repeatable.amenities",
+      "repeatable": true,
+      "required": false
+    },
+    "short_description": {
+      "type": "text",
+      "required": true
+    },
+    "Occupancy": {
+      "type": "integer"
+    },
+    "gallery": {
+      "type": "media",
+      "multiple": true,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    }
+  }
+}

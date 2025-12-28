@@ -1,0 +1,14 @@
+{
+  "collectionName": "components_repeatable_tags",
+  "info": {
+    "displayName": "tag"
+  },
+  "options": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    }
+  },
+  "config": {}
+}

@@ -1,0 +1,20 @@
+{
+  "name": "strapi-provider-upload-cloudinary-multi",
+  "version": "1.0.0",
+  "description": "Strapi v5 upload provider for Cloudinary with multi-account round-robin switching",
+  "main": "index.js",
+  "keywords": [
+    "strapi",
+    "upload",
+    "provider",
+    "cloudinary",
+    "multi"
+  ],
+  "license": "MIT",
+  "peerDependencies": {
+    "@strapi/strapi": ">=5.0.0"
+  },
+  "dependencies": {
+    "cloudinary": "^1.41.3"
+  }
+}
