@@ -73,6 +73,7 @@ module.exports = ({ env }) => {
         port: env.int('DATABASE_PORT', 3306),
         database: env('DATABASE_NAME', 'strapi'),
         user: env('DATABASE_USERNAME', 'strapi'),
+        password: env('DATABASE_PASSWORD'),
         ssl: env.bool('DATABASE_SSL', false) && {
           key: env('DATABASE_SSL_KEY', undefined),
           cert: env('DATABASE_SSL_CERT', undefined),
@@ -90,6 +91,7 @@ module.exports = ({ env }) => {
         port: env.int('DATABASE_PORT', 16307),
         database: env('DATABASE_NAME', 'defaultdb'),
         user: env('DATABASE_USERNAME', 'avnadmin'),
+        password: env('DATABASE_PASSWORD'),
         ssl: false,
         schema: env('DATABASE_SCHEMA', 'public'),
       },
