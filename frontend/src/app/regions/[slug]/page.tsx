@@ -6,7 +6,6 @@ import Link from "next/link";
 import { useParams } from "next/navigation";
 import qs from "qs";
 import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
 import useRegionStore from "../../../../store/regionStore";
 
 const API_BASE_URL = (process.env.NEXT_PUBLIC_API_URL || "").replace(/\/$/, "");
@@ -132,7 +131,6 @@ export default function RegionDetailPage() {
         </div>
       </section>
 
-      <Footer />
     </>
   );
 }

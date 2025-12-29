@@ -4,7 +4,6 @@ import React, { useEffect, useMemo, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
 import useTravelStore from "../../../store/travelStore";
 
 const API_BASE_URL = (process.env.NEXT_PUBLIC_API_URL || "").replace(/\/$/, "");
@@ -157,7 +156,6 @@ export default function TripsIndex({ mode }: { mode: Mode }) {
       <>
         <Navbar />
         <div className="min-h-screen flex items-center justify-center">Loading…</div>
-        <Footer />
       </>
     );
   }
@@ -169,7 +167,6 @@ export default function TripsIndex({ mode }: { mode: Mode }) {
         <div className="min-h-screen flex items-center justify-center text-red-600">
           {String(error)}
         </div>
-        <Footer />
       </>
     );
   }
@@ -292,7 +289,6 @@ export default function TripsIndex({ mode }: { mode: Mode }) {
         </div>
       </section>
 
-      <Footer />
     </>
   );
 }

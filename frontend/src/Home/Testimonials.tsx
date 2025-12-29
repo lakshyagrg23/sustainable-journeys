@@ -11,56 +11,36 @@ interface Testimonial {
   rating?: number; // 1-5
 }
 
-const staticTestimonials: Testimonial[] = [
+const staticTestimonials = [
   {
-    name: 'Rohit Mehra',
-    location: 'Mumbai',
-    tripType: 'Family Trip',
+    id: 1,
+    name: "Ananya Sharma",
+    location: "India",
     rating: 5,
-    text:
-      'From airport pickup to hotel check-ins, everything was smooth. Kids loved the beaches and the glass-bottom boat ride. Truly hassle-free!'
+    review:
+      "Everest Base Camp was perfectly paced. The acclimatization days and guide support made a huge difference. Loved the responsible travel approach.",
+    image: "https://i.pravatar.cc/150?img=11",
   },
   {
-    name: 'Sneha Iyer',
-    location: 'Bengaluru',
-    tripType: 'Couple',
+    id: 2,
+    name: "Rohan Mehta",
+    location: "Singapore",
     rating: 5,
-    text:
-      'Sunsets at Radhanagar were magical. The team was super responsive and crafted a perfect romantic itinerary for us.'
+    review:
+      "Annapurna region was stunning. Clear communication, great teahouse picks, and the itinerary felt safe and well planned.",
+    image: "https://i.pravatar.cc/150?img=32",
   },
   {
-    name: 'Aman Khanna',
-    location: 'Delhi',
-    tripType: 'Friends',
-    rating: 4.5,
-    text:
-      'Great coordination for ferries and activities. Snorkeling at Elephant Beach was the highlight. Excellent value for money.'
-  },
-  {
-    name: 'Pooja Desai',
-    location: 'Ahmedabad',
-    tripType: 'Solo',
+    id: 3,
+    name: "Priya Nair",
+    location: "UAE",
     rating: 5,
-    text:
-      'Felt safe throughout and the guides were professional. Loved the nature trails and the serenity of the islands.'
+    review:
+      "We did a Kathmandu + Pokhara tour. Super smooth logistics and thoughtful local experiences. Exactly what we wanted.",
+    image: "https://i.pravatar.cc/150?img=47",
   },
-  {
-    name: 'Arjun Nair',
-    location: 'Kochi',
-    tripType: 'Family Trip',
-    rating: 4.8,
-    text:
-      'Neat hotels, on-time transfers, and friendly drivers. Kids still talk about the light & sound show at Cellular Jail!'
-  },
-  {
-    name: 'Tanvi Joshi',
-    location: 'Pune',
-    tripType: 'Honeymoon',
-    rating: 5,
-    text:
-      'Thoughtful surprises and perfectly paced days. It honestly exceeded our expectations. Highly recommended.'
-  }
 ];
+
 
 const getInitials = (fullName: string): string => {
   return fullName

@@ -109,7 +109,8 @@ const getRelevantTags = (title: string, description: string) => {
   if (content.includes('culture') || content.includes('history')) relevantTags.push('Culture & History');
 
   // Always include these default tags
-  relevantTags.push('Andaman Tourism', 'Travel Guide', 'Saarthi Andaman');
+  relevantTags.push("Nepal Travel", "Travel Guide", "Sustainable Journeys");
+
 
   return [...new Set(relevantTags)]; // Remove duplicates
 };
@@ -139,7 +140,7 @@ function BlogDetailPage() {
     let createdMeta = false;
 
     if (title) {
-      document.title = `${title} - Saarthi Andaman`;
+      document.title = `${title} - Sustainable Journeys Nepal`;
     }
 
     try {
@@ -235,7 +236,7 @@ function BlogDetailPage() {
 
   // Share functionality
   const shareUrl = typeof window !== 'undefined' ? window.location.href : '';
-  const shareText = `Check out this amazing blog post about Andaman: ${blogData.title}`;
+  const shareText = `Check out this Nepal travel guide: ${blogData.title}`;
 
   const shareLinks = {
     facebook: `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(shareUrl)}`,
@@ -278,7 +279,7 @@ function BlogDetailPage() {
             {/* Compact Meta Information */}
             <div className="flex flex-wrap gap-1.5 sm:gap-2 md:gap-3 items-center mb-3 sm:mb-4 text-xs">
               <span className="bg-gradient-to-r from-blue-500 to-cyan-500 px-2.5 py-1 rounded-full font-semibold text-white shadow-lg text-xs">
-                🌊 Andaman Guide
+                🏔️ Nepal Travel Guide
               </span>
               <div className="flex items-center bg-white/20 backdrop-blur-sm px-2.5 py-1 rounded-full">
                 <FaCalendarAlt className="mr-1.5 text-xs" />
@@ -314,7 +315,7 @@ function BlogDetailPage() {
                 </div>
                 <div>
                   <p className="font-bold text-sm sm:text-base">By {blogData.author_name}</p>
-                  <p className="text-xs sm:text-sm opacity-75">Travel Expert • Andaman Specialist</p>
+                  <p className="text-xs sm:text-sm opacity-75">Travel Expert • Nepal Specialist</p>
                 </div>
               </div>
 

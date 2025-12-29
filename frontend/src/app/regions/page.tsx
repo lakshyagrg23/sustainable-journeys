@@ -4,7 +4,6 @@ import React, { useEffect, useMemo } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
 import useRegionStore from "../../../store/regionStore";
 
 const API_BASE_URL = (process.env.NEXT_PUBLIC_API_URL || "").replace(/\/$/, "");
@@ -80,7 +79,6 @@ export default function RegionsPage() {
         </div>
       </section>
 
-      <Footer />
     </>
   );
 }

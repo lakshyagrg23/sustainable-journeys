@@ -1,7 +1,7 @@
 export const metadata = {
-  title: 'Packages - Saarthi Andaman | Curated travel packages for Andaman',
-  description: 'Curated travel packages and itineraries for the Andaman islands.'
-}
+  title: "All Trips - Sustainable Journeys Nepal",
+  description: "Browse all treks and tours across Nepal — Everest, Annapurna and more.",
+};
 
 export default function PackagesLayout({ children }: { children: React.ReactNode }) {
   return <>{children}</>;

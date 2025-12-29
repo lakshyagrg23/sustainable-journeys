@@ -1,60 +1,152 @@
-import React from 'react'
+"use client";
 
-function Choice() {
+import Image from "next/image";
+import Link from "next/link";
+
+export default function Choice() {
+  const cards = [
+    {
+      title: "Safety-first planning",
+      desc: "Realistic pacing, altitude-aware itineraries, and practical guidance so the trip feels smooth, not rushed.",
+      icon: "🛡️",
+    },
+    {
+      title: "Local expertise",
+      desc: "We plan with people who actually know the routes, seasons, stays, and on-ground logistics in Nepal.",
+      icon: "🧭",
+    },
+    {
+      title: "Transparent inclusions",
+      desc: "Clear inclusions/exclusions and optional upgrades — no confusing surprises after you commit.",
+      icon: "✅",
+    },
+    {
+      title: "Responsible travel",
+      desc: "Community-friendly choices and mindful practices that respect trails, culture, and local businesses.",
+      icon: "🌿",
+    },
+    {
+      title: "Two travel styles",
+      desc: "Adventure + Premium or Budget-friendly + Practical — same safety standards, different comfort/budget choices.",
+      icon: "✨",
+    },
+    {
+      title: "Support before & during",
+      desc: "Packing guidance, route clarity, and simple planning support so you feel confident throughout.",
+      icon: "🤝",
+    },
+  ];
+
   return (
-    <section className="py-8 px-2 text-center">
-      <h2 className="text-2xl md:text-5xl font-bold text-indigo-800 mb-8">
-        Why Choose Us? 🤔
-      </h2>
+    <section className="bg-white py-14">
+      <div className="max-w-7xl mx-auto px-4">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
+          {/* Left content */}
+          <div className="lg:col-span-6">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 text-blue-700 text-xs font-semibold border border-blue-100">
+              Why Sustainable Journeys?
+            </div>
 
-      <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 gap-4 max-w-7xl mx-auto">
+            <h2 className="text-2xl md:text-4xl font-bold text-gray-900 mt-3 leading-tight">
+              A better way to plan Nepal — practical, safe, and tailored to your style.
+            </h2>
 
+            <p className="text-gray-600 mt-4 leading-relaxed">
+              Nepal is incredible — but the best experiences come from honest planning.
+              We build itineraries that match your time, fitness, and comfort preferences,
+              and we keep everything clear: what’s included, what’s optional, and what your days look like.
+            </p>
 
-        <div className="bg-white rounded-xl shadow p-3 md:p-6 text-sm md:text-base hover:-translate-y-1 transition">
-          <div className="w-10 h-10 md:w-16 md:h-16 mx-auto text-blue-600 mb-2">
-            <svg className="w-full h-full" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24">
-              <path d="M12 2C7.589 2 4 5.589 4 10c0 4.411 8 12 8 12s8-7.589 8-12c0-4.411-3.589-8-8-8zm0 12c-2.206 0-4-1.794-4-4s1.794-4 4-4 4 1.794 4 4-1.794 4-4 4z" />
-            </svg>
+            <div className="mt-6 flex flex-col sm:flex-row gap-3">
+              <Link
+                href="/contact"
+                className="inline-flex items-center justify-center px-6 py-3 rounded-xl bg-blue-600 text-white font-semibold hover:bg-blue-700"
+              >
+                Plan my trip
+              </Link>
+              <Link
+                href="/regions"
+                className="inline-flex items-center justify-center px-6 py-3 rounded-xl border font-semibold text-gray-900 hover:bg-gray-50"
+              >
+                Browse Regions
+              </Link>
+            </div>
+
+            {/* Two styles */}
+            <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div className="rounded-2xl border bg-gray-50 p-5">
+                <div className="text-xs font-semibold text-gray-500">✨ Adventure + Premium</div>
+                <div className="text-lg font-bold text-gray-900 mt-1">Premium Adventures</div>
+                <p className="text-sm text-gray-600 mt-2">
+                  Comfort upgrades, smoother logistics, private planning, and optional extra support.
+                </p>
+              </div>
+              <div className="rounded-2xl border bg-gray-50 p-5">
+                <div className="text-xs font-semibold text-gray-500">✅ Budget-friendly + Practical</div>
+                <div className="text-lg font-bold text-gray-900 mt-1">Budget-smart Journeys</div>
+                <p className="text-sm text-gray-600 mt-2">
+                  Best value routes, clear costs, practical stays — without compromising safety.
+                </p>
+              </div>
+            </div>
           </div>
-          <h3 className="text-base md:text-xl font-semibold text-indigo-700 mb-1">Local Expertise</h3>
-          <p className="text-gray-600">We know the routes, the secrets, and the stories behind every wave and shore.</p>
-        </div>
 
+          {/* Right visuals + cards */}
+          <div className="lg:col-span-6">
+            <div className="rounded-2xl border overflow-hidden shadow-sm bg-white">
+              <div className="relative h-56">
+                <Image
+                  src="https://images.unsplash.com/photo-1529963183134-61a90db47eaf?auto=format&fit=crop&w=1800&q=80"
+                  alt="Nepal mountain view"
+                  fill
+                  className="object-cover"
+                />
+                <div className="absolute inset-0 bg-black/20" />
+                <div className="absolute bottom-4 left-4 text-white">
+                  <div className="text-xs text-white/85">Plan smart • Travel better</div>
+                  <div className="text-xl font-bold">Treks & Tours across Nepal</div>
+                </div>
+              </div>
 
-        <div className="bg-indigo-50 rounded-xl shadow p-3 md:p-6 text-sm md:text-base hover:scale-105 transition">
-          <div className="w-10 h-10 md:w-16 md:h-16 mx-auto text-indigo-600 mb-2">
-            <svg className="w-full h-full" fill="currentColor" viewBox="0 0 24 24">
-              <path d="M14 12l-2.121-2.121a1 1 0 0 0-1.414 0L4.757 15.586a1 1 0 0 0 0 1.414l.707.707a1 1 0 0 0 1.414 0L12.586 12l1.414-1.414z" />
-            </svg>
+              <div className="p-6 grid grid-cols-1 sm:grid-cols-2 gap-4">
+                {cards.map((c) => (
+                  <div key={c.title} className="rounded-2xl border bg-gray-50 p-5">
+                    <div className="text-2xl">{c.icon}</div>
+                    <div className="font-bold text-gray-900 mt-2">{c.title}</div>
+                    <div className="text-sm text-gray-600 mt-2 leading-relaxed">{c.desc}</div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* CTA strip */}
+            <div className="mt-6 rounded-2xl border bg-gradient-to-r from-gray-900 to-gray-800 text-white p-6">
+              <div className="text-sm text-white/80">Quick start</div>
+              <div className="text-lg font-bold mt-1">Tell us your dates — we’ll suggest the best options.</div>
+              <div className="mt-4 flex flex-col sm:flex-row gap-3">
+                <Link
+                  href="/treks"
+                  className="inline-flex items-center justify-center px-5 py-2.5 rounded-xl bg-white text-black font-semibold hover:bg-white/90"
+                >
+                  Explore Treks
+                </Link>
+                <Link
+                  href="/tours"
+                  className="inline-flex items-center justify-center px-5 py-2.5 rounded-xl bg-white/10 text-white font-semibold border border-white/25 hover:bg-white/15"
+                >
+                  Explore Tours
+                </Link>
+                <Link
+                  href="/contact"
+                  className="inline-flex items-center justify-center px-5 py-2.5 rounded-xl bg-white/10 text-white font-semibold border border-white/25 hover:bg-white/15"
+                >
+                  Send Inquiry
+                </Link>
+              </div>
+            </div>
           </div>
-          <h3 className="text-base md:text-xl font-semibold text-indigo-700 mb-1">Custom-Tailored Itineraries</h3>
-          <p className="text-gray-700">No cookie-cutter packages. Every trip is crafted to match your style and pace.</p>
-        </div>
-
-
-        <div className="bg-white border border-blue-200 rounded-xl shadow-sm p-3 md:p-6 text-sm md:text-base hover:shadow-lg transition">
-          <div className="w-10 h-10 md:w-16 md:h-16 mx-auto text-blue-500 mb-2">
-            <svg className="w-full h-full" fill="currentColor" viewBox="0 0 24 24">
-              <path d="M10.683 5.343A1 1 0 0 0 9.999 4H4a1 1 0 0 0-1 1v6a1 1 0 0 0 .343.742l7.258 7.258a1 1 0 0 0 1.414 0l6-6a1 1 0 0 0 0-1.414l-7.332-7.243z" />
-            </svg>
-          </div>
-          <h3 className="text-base md:text-xl font-semibold text-blue-600 mb-1">Adventure & Comfort</h3>
-          <p className="text-gray-600">From adrenaline-pumping water sports to serene beach stays, we blend thrill with relaxation.</p>
-        </div>
-
-
-        <div className="bg-blue-50 rounded-xl p-3 md:p-6 text-sm md:text-base shadow-md hover:-translate-y-1 transition">
-          <div className="w-10 h-10 md:w-16 md:h-16 mx-auto text-indigo-700 mb-2">
-            <svg className="w-full h-full" fill="currentColor" viewBox="0 0 24 24">
-              <path d="M17 1H7c-1.103 0-2 .897-2 2v18a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3c0-1.103-.897-2-2-2zM12 18a2 2 0 1 0 0-4 2 2 0 0 0 0 4z" />
-            </svg>
-          </div>
-          <h3 className="text-base md:text-xl font-semibold text-indigo-800 mb-1">Personal Touch</h3>
-          <p className="text-gray-700">For us, every guest is family. Expect care, attention, and genuine hospitality.</p>
         </div>
       </div>
     </section>
-  )
+  );
 }
-
-export default Choice

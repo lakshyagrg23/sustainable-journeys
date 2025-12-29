@@ -8,142 +8,39 @@ interface FaqItem {
   keywords: string;
 }
 
-const faqData: FaqItem[] = [
+const faqData = [
   {
-    icon: '📶',
-    question: 'Can I get mobile network & internet in Andaman?',
-    keywords: 'mobile network internet connectivity 4g wifi port blair havelock neil',
-    answer: (
-      <div>
-        <p>Yes — but connectivity varies by island. <strong>Port Blair</strong> has the most reliable 4G coverage.</p>
-        <p><strong>Havelock</strong> and <strong>Neil</strong> have decent mobile service but speeds can be slower and connections may be patchy on remote stretches.</p>
-        <div className="bg-green-50 border border-green-200 text-green-700 text-sm rounded-md px-3 py-2 my-3">
-          Saarthi Andaman works with properties to provide Wi‑Fi where possible; don’t rely on mobile data for critical needs on remote islands.
-        </div>
-        <p className="text-sm">Tip: Keep an offline copy of important documents and download maps or guides before travelling to remote islands.</p>
-      </div>
-    )
+    question: "What’s the best time to visit Nepal for trekking?",
+    answer:
+      "For most treks, Spring (Mar–May) and Autumn (Sep–Nov) are ideal: stable weather, clear views, and comfortable trail conditions. Winter can be great for lower-altitude routes, while monsoon months are better for certain rain-shadow areas.",
   },
   {
-    icon: '✈️',
-    question: 'How do I reach Andaman?',
-    keywords: 'reach how to reach andaman flights ships port blair ixz ferry',
-    answer: (
-      <div>
-        <p>The easiest way is by <strong>flight</strong> to Port Blair’s Veer Savarkar International Airport (<strong>IXZ</strong>) from major Indian cities such as Chennai, Kolkata, Delhi, Bangalore and Hyderabad.</p>
-        <p>Passenger ships / ferries are also available on routes from Chennai, Kolkata and Visakhapatnam for those who prefer sea travel.</p>
-        <div className="bg-green-50 border border-green-200 text-green-700 text-sm rounded-md px-3 py-2 my-3">
-          Travel tip: Flights are faster and more frequent; book early during peak season to secure seats and better fares.
-        </div>
-      </div>
-    )
+    question: "Do I need permits for treks like Everest/Annapurna?",
+    answer:
+      "Yes—most trekking regions require permits (like TIMS or region permits, depending on route). We’ll guide you on what’s required based on your selected itinerary and handle the process where possible.",
   },
   {
-    icon: '🌤️',
-    question: 'What is the best time to visit Andaman Islands?',
-    keywords: 'time visit season weather climate best when',
-    answer: (
-      <div>
-        <p>The <span className="text-blue-600 font-semibold">best time to visit Andaman</span> is from <strong>October to March</strong> (pleasant & ideal for activities).</p>
-        <div className="bg-green-50 border border-green-200 text-green-700 text-sm rounded-md px-3 py-2 my-3">
-          <strong>Peak Season:</strong> Dec - Feb (perfect weather, higher prices & crowds)
-        </div>
-        <p className="font-semibold mt-2">Weather breakdown:</p>
-        <ul className="space-y-1 mt-1 text-sm">
-          <li><strong>Oct - Mar:</strong> 20-30°C, dry & best for water sports</li>
-          <li><strong>Apr - Jun:</strong> 24-37°C, humid, good diving, hot mid-day</li>
-          <li><strong>Jul - Sep:</strong> Monsoon, rough seas, many activities shut</li>
-        </ul>
-      </div>
-    )
+    question: "How do you handle altitude and safety?",
+    answer:
+      "We plan acclimatization properly, keep daily altitude gains sensible, and set realistic pacing. We also recommend hydration, rest, and monitoring symptoms. For high-altitude routes, we plan buffer days and provide clear safety guidance.",
   },
   {
-    icon: '📋',
-    question: 'Do I need a passport to visit Andaman Islands?',
-    keywords: 'passport requirements documents visa indian citizens foreigners',
-    answer: (
-      <div>
-        <p><strong>Indian Citizens:</strong> No passport needed. Carry valid photo ID (Aadhaar / Voter ID / DL).</p>
-        <p><strong>Foreign Nationals:</strong> Passport + Indian Visa + <span className="text-blue-600 font-semibold">Restricted Area Permit (RAP)</span>.</p>
-        <div className="bg-green-50 border border-green-200 text-green-700 text-sm rounded-md px-3 py-2 my-3">
-          <strong>Tip:</strong> RAP issued on arrival at Port Blair (valid 30 days).
-        </div>
-        <p className="font-semibold mt-2">Documents:</p>
-        <ul className="space-y-1 mt-1 text-sm">
-          <li>Photo ID proof</li>
-          <li>Return flight tickets</li>
-          <li>Hotel booking confirmation</li>
-        </ul>
-      </div>
-    )
+    question: "What fitness level is required for treks?",
+    answer:
+      "Easy routes can be done with basic fitness. Moderate routes need regular walking/cardio preparation. Challenging routes (like EBC) benefit from consistent training and hiking practice. We can suggest a simple training plan based on your trek.",
   },
   {
-    icon: '🛡️',
-    question: 'Is Andaman safe for tourists and solo travelers?',
-    keywords: 'safety secure safe travel alone family women solo',
-    answer: (
-      <div>
-        <p>Yes, Andaman is <span className="text-blue-600 font-semibold">very safe</span>, including for solo & women travelers.</p>
-        <div className="bg-green-50 border border-green-200 text-green-700 text-sm rounded-md px-3 py-2 my-3">
-          <strong>Highlights:</strong> Low crime, friendly locals, patrolled tourist zones.
-        </div>
-        <p className="font-semibold mt-2">Tips:</p>
-        <ul className="space-y-1 mt-1 text-sm">
-          <li>Follow water safety rules</li>
-          <li>Respect restricted tribal areas</li>
-          <li>Use licensed operators</li>
-          <li>Share itinerary if solo</li>
-        </ul>
-        <div className="bg-amber-50 border border-amber-200 text-amber-700 text-sm rounded-md px-3 py-2 mt-3">
-          <strong>Important:</strong> Avoid isolated beaches late at night.
-        </div>
-      </div>
-    )
+    question: "What’s included in your trips?",
+    answer:
+      "Inclusions depend on the trip: guide support, accommodation, transport, permits assistance, and itinerary planning. Each trip page lists inclusions/exclusions clearly. We can also customize to include porters or upgrade stays.",
   },
   {
-    icon: '📅',
-    question: 'What is the ideal duration for an Andaman trip?',
-    keywords: 'duration days stay how long itinerary trip plan',
-    answer: (
-      <div>
-        <p><span className="text-blue-600 font-semibold">5–7 days</span> is ideal for a balanced trip.</p>
-        <ul className="space-y-1 mt-2 text-sm">
-          <li><strong>3–4 Days:</strong> Port Blair + Havelock (basic)</li>
-          <li><strong>5–6 Days:</strong> + Neil Island (recommended)</li>
-          <li><strong>7–10 Days:</strong> Add Baratang / Ross / extra activities</li>
-          <li><strong>10+ Days:</strong> Relaxed multi-island exploration</li>
-        </ul>
-        <div className="bg-green-50 border border-green-200 text-green-700 text-sm rounded-md px-3 py-2 mt-3">
-          <strong>Value Pick:</strong> 5–6 day plan covers all highlights comfortably.
-        </div>
-      </div>
-    )
+    question: "Can you customize the itinerary?",
+    answer:
+      "Yes. You can choose a private trip, add rest days, adjust comfort levels, add cultural experiences, or combine regions (e.g., Kathmandu + Pokhara + Chitwan).",
   },
-  {
-    icon: '🏝️',
-    question: 'Which are the top islands to visit in Andaman?',
-    keywords: 'islands visit top best must-see havelock neil ross north bay',
-    answer: (
-      <div>
-        <p className="font-semibold">Must visit:</p>
-        <ul className="space-y-1 mt-1 text-sm">
-          <li><strong>Havelock:</strong> Radhanagar Beach & diving</li>
-          <li><strong>Neil Island:</strong> Peaceful & scenic rock formations</li>
-          <li><strong>Port Blair:</strong> Cellular Jail & museums</li>
-        </ul>
-        <p className="font-semibold mt-3">Also consider:</p>
-        <ul className="space-y-1 mt-1 text-sm">
-          <li><strong>Ross Island:</strong> Ruins & wildlife</li>
-          <li><strong>North Bay:</strong> Water sports & corals</li>
-          <li><strong>Baratang:</strong> Limestone caves & mud volcano</li>
-        </ul>
-        <div className="bg-green-50 border border-green-200 text-green-700 text-sm rounded-md px-3 py-2 mt-3">
-          <strong>Balanced Plan:</strong> Port Blair (2) + Havelock (2–3) + Neil (1–2)
-        </div>
-      </div>
-    )
-  }
 ];
+
 
 const FAQSection: React.FC = () => {
   const [openIndex, setOpenIndex] = useState<number | null>(0);

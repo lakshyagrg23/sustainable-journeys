@@ -1,7 +1,15 @@
 import Image from "next/image";
 import Link from "next/link";
+
 import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
+import ContactSection from "@/components/Contact";
+
+import FeaturedTrips from "@/Home/FeaturedTrips";
+import FeaturedRegions from "@/Home/FeaturedRegions";
+import Choice from "@/Home/Choice";
+import Testimonials from "@/Home/Testimonials";
+import FAQSection from "@/Home/FAQSection";
+import Blogs from "@/Home/Blogs";
 
 export default function HomePage() {
   return (
@@ -9,9 +17,9 @@ export default function HomePage() {
       <Navbar />
 
       {/* Hero */}
-      <section className="relative h-[75vh] min-h-[520px] w-full overflow-hidden">
+      <section className="relative h-[78vh] min-h-[560px] w-full overflow-hidden">
         <Image
-          src="https://images.unsplash.com/photo-1544735716-3e5c7b2b2d7a?auto=format&fit=crop&w=2400&q=80"
+          src="/mountain/himalayas.jpg"
           alt="Nepal Himalayas"
           fill
           priority
@@ -27,7 +35,8 @@ export default function HomePage() {
               </p>
 
               <h1 className="text-white text-3xl md:text-6xl font-bold leading-tight">
-                Trek. Travel. <span className="text-white/90">Respect the mountains.</span>
+                Trek. Travel.{" "}
+                <span className="text-white/90">Respect the mountains.</span>
               </h1>
 
               <p className="text-white/90 mt-4 text-base md:text-lg">
@@ -75,7 +84,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Quick browse */}
+      {/* Quick browse (keep this - it’s good) */}
       <section className="bg-gray-50 py-12">
         <div className="max-w-7xl mx-auto px-4">
           <div className="flex items-end justify-between gap-4 flex-wrap">
@@ -157,6 +166,16 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* NEW: rich homepage sections */}
+      <FeaturedTrips mode="treks" />
+      <FeaturedTrips mode="tours" />
+      <FeaturedRegions />
+
+      <Choice />
+      <Testimonials />
+      <FAQSection />
+      <Blogs />
+
       {/* CTA */}
       <section className="py-14 bg-white">
         <div className="max-w-7xl mx-auto px-4">
@@ -178,7 +197,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      <Footer />
+      <ContactSection />
     </>
   );
 }

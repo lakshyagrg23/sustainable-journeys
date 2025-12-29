@@ -8,7 +8,6 @@ import { FaCalendarAlt, FaMapMarkerAlt, FaStar } from 'react-icons/fa';
 import { MdLocalOffer } from 'react-icons/md';
 import { SiHomeassistantcommunitystore } from 'react-icons/si';
 import Navbar from '@/components/Navbar';
-import Footer from '@/components/Footer';
 import ContactSection from '@/components/Contact';
 import IncludedList from '@/components/package/IncludedList';
 import useTravelStore from '../../../../store/travelStore';
@@ -120,7 +119,6 @@ function PackagePage() {
         <div className="min-h-screen flex justify-center items-center">
           <div className="animate-spin rounded-full h-16 w-16 border-t-2 border-b-2 border-purple-600"></div>
         </div>
-        <Footer />
       </>
     );
   }
@@ -134,7 +132,6 @@ function PackagePage() {
             <p className="text-red-500">{error}</p>
           </div>
         </div>
-        <Footer />
       </>
     );
   }
@@ -151,7 +148,6 @@ function PackagePage() {
             </Link>
           </div>
         </div>
-        <Footer />
       </>
     );
   }

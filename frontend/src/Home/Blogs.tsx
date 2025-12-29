@@ -194,7 +194,7 @@ const BlogSection: React.FC = () => {
               Travel Stories & Tips
             </h2>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              Discover insights, guides, and inspiration for your Andaman adventure
+              Discover insights, guides, and inspiration for your Nepal adventure
             </p>
           </div>
 
@@ -216,7 +216,7 @@ const BlogSection: React.FC = () => {
               Stories Coming Soon
             </h3>
             <p className="text-gray-600 mb-6 leading-relaxed">
-              We&apos;re crafting amazing travel stories and insider tips about the beautiful Andaman Islands.
+              We&apos;re crafting amazing travel stories and insider tips about the beautiful Nepal Regions.
               Our blog will feature stunning destinations, local experiences, and practical travel guides.
             </p>
 
@@ -252,10 +252,10 @@ const BlogSection: React.FC = () => {
 
             <div className="flex flex-col sm:flex-row gap-3 justify-center">
               <Link
-                href="/activities"
+                href="/treks"
                 className="inline-flex items-center justify-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition-all duration-200"
               >
-                Explore Activities
+                Explore Treks
                 <svg className="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
                 </svg>
@@ -284,7 +284,7 @@ const BlogSection: React.FC = () => {
               Travel Stories & Tips
             </h2>
             <p className="text-lg text-gray-600 max-w-2xl lg:max-w-none">
-              Discover insights, guides, and inspiration for your Andaman adventure
+              Discover insights, guides, and inspiration for your Nepal adventure
             </p>
           </div>
 

@@ -57,17 +57,18 @@ const calculateReadingTime = (text: string) => {
 
 // Blog categories for filtering
 const BLOG_CATEGORIES = [
-  'All Blogs',
-  'Travel Guides',
-  'Adventure Sports',
-  'Beaches & Islands',
-  'Local Culture',
-  'Food & Cuisine',
-  'Water Activities',
-  'Photography Tips',
-  'Budget Travel',
-  'Luxury Travel'
+  "All Blogs",
+  "Trekking Routes",
+  "Best Seasons",
+  "Gear & Preparation",
+  "Altitude & Safety",
+  "Culture & Heritage",
+  "Food & Local Life",
+  "Wildlife & Nature",
+  "Responsible Travel",
+  "Budget Tips",
 ];
+
 
 // Sort options
 const SORT_OPTIONS = [
@@ -129,7 +130,7 @@ function BlogsPage() {
         <div className="absolute inset-0">
           <Image
             src="https://andamanbliss.com/storage/blogs/blog_temp_CzZUcDF5wL.jpeg"
-            alt="Andaman Travel Blogs"
+            alt="Nepal Travel Guide"
             fill
             priority
             sizes="100vw"
@@ -153,16 +154,16 @@ function BlogsPage() {
           <div className="text-center max-w-4xl mx-auto px-4">
             <div className="inline-block mb-4">
               <span className="bg-gradient-to-r from-blue-500 to-cyan-500 px-4 py-2 rounded-full text-sm font-semibold">
-                📚 Andaman Travel Blogs
+                📚 Nepal Travel Guide
               </span>
             </div>
             <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 leading-tight">
               <span className="bg-gradient-to-r from-white via-blue-100 to-cyan-100 bg-clip-text text-transparent">
-                Discover Andaman
+                Discover Nepal
               </span>
             </h1>
             <p className="text-lg sm:text-xl md:text-2xl mb-6 opacity-90 font-light">
-              Expert guides, travel tips, and hidden gems of the Andaman Islands
+              Expert guides, travel tips, and routes, culture, and responsible travel tips across Nepal
             </p>
 
             {/* Quick Stats */}
