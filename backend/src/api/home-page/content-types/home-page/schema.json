@@ -1,0 +1,50 @@
+{
+  "kind": "singleType",
+  "collectionName": "home_pages",
+  "info": {
+    "singularName": "home-page",
+    "pluralName": "home-pages",
+    "displayName": "HomePage"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "heroTitle": {
+      "type": "string"
+    },
+    "heroSubtitle": {
+      "type": "string"
+    },
+    "heroImage": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "featuredTrips": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::package.package"
+    },
+    "featuredRegions": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::region.region"
+    },
+    "whyUsTitle": {
+      "type": "text"
+    },
+    "whyUsPoints": {
+      "type": "blocks"
+    },
+    "sustainabilityTeaser": {
+      "type": "blocks"
+    }
+  }
+}

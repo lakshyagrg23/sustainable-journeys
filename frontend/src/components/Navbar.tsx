@@ -236,34 +236,16 @@ const Navbar = () => {
   //   href: `/${island.documentId}` // Use documentId directly
   // })) || [];
 
-  const navLinks = [
-    {
-      href: "#",
-      label: "Service",
-      hasDropdown: true,
-      dropdown: [
-        { label: "View All Packages", href: "/packages" },
-        { label: "View All Activities", href: "/activities" },
-        { label: "View All hotel", href: "/hotel" },
-        { href: "/ferry", label: "Ferry Booking" },
-        { label: "View All Blog", href: "/blog" },
+const navLinks = [
+  { href: "/treks", label: "Treks", hasDropdown: false },
+  { href: "/tours", label: "Tours", hasDropdown: false },
+  { href: "/regions", label: "Regions", hasDropdown: false },
+  { href: "/packages", label: "All Trips", hasDropdown: false },
+  { href: "/blog", label: "Travel Guide", hasDropdown: false },
+  { href: "/about", label: "About", hasDropdown: false },
+  { href: "/contact", label: "Contact", hasDropdown: false },
+];
 
-      ]
-    },
-    {
-      href: "#",
-      label: "Islands & Sightseeing",
-      hasDropdown: true,
-      // dropdown: destinationsDropdown,
-      isIslandsDropdown: true
-    },
-    // { href: "/bike", label: "Bike", hasDropdown: false },
-    // { href: "/cab", label: "Cabs", hasDropdown: false },
-    // { href: "/sightseeing", label: "Sightseeing", hasDropdown: false },
-
-    { href: "/about", label: "About Us", hasDropdown: false },
-    { href: "/contact", label: "Contact Us", hasDropdown: false },
-  ];
 
   return (
     <>
@@ -277,10 +259,10 @@ const Navbar = () => {
             <div className="flex items-center">
               <Link href="/" className="flex items-center">
                 <Image
-                  width={120}
-                  height={70}
-                  src="/Logo/SA-Logo.png"
-                  alt="Saarthi Andaman Logo"
+                  width={60}
+                  height={30}
+                  src="/Logo/SJ-Logo.jpeg"
+                  alt="Sustainable Journeys Logo"
                   className="rounded-lg object-contain"
                   priority
                 />

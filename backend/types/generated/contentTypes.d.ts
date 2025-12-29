@@ -484,6 +484,47 @@ export interface ApiCapCap extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiHomePageHomePage extends Struct.SingleTypeSchema {
+  collectionName: 'home_pages';
+  info: {
+    displayName: 'HomePage';
+    pluralName: 'home-pages';
+    singularName: 'home-page';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    featuredRegions: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::region.region'
+    >;
+    featuredTrips: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::package.package'
+    >;
+    heroImage: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    heroSubtitle: Schema.Attribute.String;
+    heroTitle: Schema.Attribute.String;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::home-page.home-page'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    sustainabilityTeaser: Schema.Attribute.Blocks;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    whyUsPoints: Schema.Attribute.Blocks;
+    whyUsTitle: Schema.Attribute.Text;
+  };
+}
+
 export interface ApiHotelRoomHotelRoom extends Struct.CollectionTypeSchema {
   collectionName: 'hotel_rooms';
   info: {
@@ -576,10 +617,14 @@ export interface ApiPackagePackage extends Struct.CollectionTypeSchema {
     draftAndPublish: true;
   };
   attributes: {
+    bestSeason: Schema.Attribute.Enumeration<
+      ['Spring', 'Autumn', 'Winter', 'Summer', 'All year']
+    >;
     category: Schema.Attribute.Enumeration<
       ['family', 'honeymoon', 'adventure', 'group']
     > &
       Schema.Attribute.Required;
+    costInfo: Schema.Attribute.Blocks;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -588,8 +633,13 @@ export interface ApiPackagePackage extends Struct.CollectionTypeSchema {
       Schema.Attribute.SetMinMaxLength<{
         minLength: 100;
       }>;
+    difficulty: Schema.Attribute.Enumeration<
+      ['Easy', 'Moderate', 'Challenging']
+    >;
     discount: Schema.Attribute.Decimal;
     duration: Schema.Attribute.String & Schema.Attribute.Required;
+    endPoint: Schema.Attribute.String;
+    faqs: Schema.Attribute.JSON;
     gallery: Schema.Attribute.Media<'images', true> & Schema.Attribute.Required;
     images: Schema.Attribute.Media<'images'> & Schema.Attribute.Required;
     itinerary: Schema.Attribute.Component<'repeatable.itinerary', true>;
@@ -599,22 +649,29 @@ export interface ApiPackagePackage extends Struct.CollectionTypeSchema {
       'api::package.package'
     > &
       Schema.Attribute.Private;
+    maxAltitudeM: Schema.Attribute.Decimal;
     number_of_reviews: Schema.Attribute.Integer;
     original_price: Schema.Attribute.Decimal & Schema.Attribute.Required;
     person: Schema.Attribute.String;
     price: Schema.Attribute.Decimal & Schema.Attribute.Required;
     publishedAt: Schema.Attribute.DateTime;
     rating: Schema.Attribute.Integer;
+    region: Schema.Attribute.Relation<'manyToOne', 'api::region.region'>;
     short_description: Schema.Attribute.String &
       Schema.Attribute.Required &
       Schema.Attribute.SetMinMaxLength<{
         minLength: 20;
       }>;
+    slug: Schema.Attribute.UID<'title'> & Schema.Attribute.Required;
+    startPoint: Schema.Attribute.String;
     title: Schema.Attribute.String &
       Schema.Attribute.Required &
       Schema.Attribute.SetMinMaxLength<{
         minLength: 2;
       }>;
+    tripType: Schema.Attribute.Enumeration<
+      ['Trek', 'Tour', 'Luxury', 'Wildlife', 'Spiritual', 'Adventure', 'Heli']
+    >;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -647,6 +704,47 @@ export interface ApiPostPost extends Struct.CollectionTypeSchema {
     publishedAt: Schema.Attribute.DateTime;
     social_link: Schema.Attribute.String & Schema.Attribute.Required;
     title: Schema.Attribute.String & Schema.Attribute.Required;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiRegionRegion extends Struct.CollectionTypeSchema {
+  collectionName: 'regions';
+  info: {
+    displayName: 'Region';
+    pluralName: 'regions';
+    singularName: 'region';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    bestSeason: Schema.Attribute.Enumeration<
+      ['Spring', 'Autumn', 'Winter', 'Summer', 'All year']
+    >;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    heroImage: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios'
+    > &
+      Schema.Attribute.Required;
+    highlights: Schema.Attribute.JSON;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::region.region'
+    > &
+      Schema.Attribute.Private;
+    name: Schema.Attribute.String & Schema.Attribute.Required;
+    overview: Schema.Attribute.Blocks;
+    packages: Schema.Attribute.Relation<'oneToMany', 'api::package.package'>;
+    publishedAt: Schema.Attribute.DateTime;
+    seoDescription: Schema.Attribute.Text;
+    seoTitle: Schema.Attribute.String;
+    slug: Schema.Attribute.UID<'name'> & Schema.Attribute.Required;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -1237,10 +1335,12 @@ declare module '@strapi/strapi' {
       'api::activity.activity': ApiActivityActivity;
       'api::blog.blog': ApiBlogBlog;
       'api::cap.cap': ApiCapCap;
+      'api::home-page.home-page': ApiHomePageHomePage;
       'api::hotel-room.hotel-room': ApiHotelRoomHotelRoom;
       'api::hotel.hotel': ApiHotelHotel;
       'api::package.package': ApiPackagePackage;
       'api::post.post': ApiPostPost;
+      'api::region.region': ApiRegionRegion;
       'api::sub-activite.sub-activite': ApiSubActiviteSubActivite;
       'api::testimonial.testimonial': ApiTestimonialTestimonial;
       'plugin::content-releases.release': PluginContentReleasesRelease;

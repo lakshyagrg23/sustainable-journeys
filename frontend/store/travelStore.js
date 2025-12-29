@@ -10,18 +10,31 @@ const useTravelStore = create((set) => ({
   error: null,
 
   fetchPackages: async () => {
-    set({ loading: true, error: null });
-    try {
-      const res = await fetch(`${API_BASE_URL}/api/packages?populate=*`);
-      // const res = await fetch(`${API_BASE_URL}/api/packages?populate[0]=itinerary&populate[1]=itinerary.photo`);
-      if (!res.ok) throw new Error("Failed to fetch packages");
-      const data = await res.json();
-      // console.log("Fetched packages:", data.data);
-      set({ packages: data.data, loading: false });
-    } catch (err) {
-      set({ error: err.message, loading: false });
-    }
-  },
+  set({ loading: true, error: null });
+  try {
+    const query = qs.stringify(
+      {
+        populate: {
+          images: true,
+          gallery: true,
+          region: true,
+          Whats_Included: true,
+          itinerary: { populate: { photo: true } },
+        },
+        sort: ["createdAt:desc"],
+      },
+      { encodeValuesOnly: true }
+    );
+
+    const res = await fetch(`${API_BASE_URL}/api/packages?${query}`);
+    if (!res.ok) throw new Error("Failed to fetch packages");
+    const data = await res.json();
+    set({ packages: data?.data || [], loading: false });
+  } catch (err) {
+    set({ error: err.message, loading: false });
+  }
+},
+
 
   // fetchPackageById: async (id) => {
   //   if (!id) return;
@@ -105,7 +118,41 @@ const useTravelStore = create((set) => ({
     } catch (err) {
       set({ error: err.message, loading: false });
     }
+  },
+
+  fetchPackageBySlug: async (slug) => {
+  if (!slug) return;
+  set({ loading: true, error: null, singlePackage: null });
+
+  try {
+    const query = qs.stringify(
+      {
+        filters: {
+          slug: { $eq: slug },
+        },
+        populate: {
+          images: true,
+          gallery: true,
+          region: true,
+          Whats_Included: true,
+          itinerary: { populate: { photo: true } },
+        },
+      },
+      { encodeValuesOnly: true }
+    );
+
+    const url = `${API_BASE_URL}/api/packages?${query}`;
+    const res = await fetch(url);
+    if (!res.ok) throw new Error("Failed to fetch package by slug");
+
+    const data = await res.json();
+    const first = data?.data?.[0] || null;
+    set({ singlePackage: first, loading: false });
+  } catch (err) {
+    set({ error: err.message, loading: false });
   }
+}
+
 
 
 

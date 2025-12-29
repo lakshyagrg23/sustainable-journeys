@@ -85,6 +85,62 @@
         "adventure",
         "group"
       ]
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "title",
+      "required": true
+    },
+    "tripType": {
+      "type": "enumeration",
+      "enum": [
+        "Trek",
+        "Tour",
+        "Luxury",
+        "Wildlife",
+        "Spiritual",
+        "Adventure",
+        "Heli"
+      ]
+    },
+    "region": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::region.region",
+      "inversedBy": "packages"
+    },
+    "difficulty": {
+      "type": "enumeration",
+      "enum": [
+        "Easy",
+        "Moderate",
+        "Challenging"
+      ]
+    },
+    "maxAltitudeM": {
+      "type": "decimal"
+    },
+    "bestSeason": {
+      "type": "enumeration",
+      "enum": [
+        "Spring",
+        "Autumn",
+        "Winter",
+        "Summer",
+        "All year"
+      ]
+    },
+    "startPoint": {
+      "type": "string"
+    },
+    "endPoint": {
+      "type": "string"
+    },
+    "faqs": {
+      "type": "json"
+    },
+    "costInfo": {
+      "type": "blocks"
     }
   }
 }
