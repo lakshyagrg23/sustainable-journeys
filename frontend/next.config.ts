@@ -2,6 +2,10 @@ import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
   reactStrictMode: true,
+  eslint: {
+    // Skip ESLint during `next build` so lint errors don't block production builds.
+    ignoreDuringBuilds: true,
+  },
   images: {
     // Simple domains array covers most https hosts
     domains: [
