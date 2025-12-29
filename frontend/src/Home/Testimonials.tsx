@@ -3,6 +3,7 @@ import React, { useRef, useEffect, useState, useCallback } from 'react';
 import Image from 'next/image';
 
 interface Testimonial {
+  id?: number;
   name: string;
   text: string;
   avatar?: string;
@@ -11,33 +12,33 @@ interface Testimonial {
   rating?: number; // 1-5
 }
 
-const staticTestimonials = [
+const staticTestimonials: Testimonial[] = [
   {
     id: 1,
     name: "Ananya Sharma",
     location: "India",
     rating: 5,
-    review:
+    text:
       "Everest Base Camp was perfectly paced. The acclimatization days and guide support made a huge difference. Loved the responsible travel approach.",
-    image: "https://i.pravatar.cc/150?img=11",
+    avatar: "https://i.pravatar.cc/150?img=11",
   },
   {
     id: 2,
     name: "Rohan Mehta",
     location: "Singapore",
     rating: 5,
-    review:
+    text:
       "Annapurna region was stunning. Clear communication, great teahouse picks, and the itinerary felt safe and well planned.",
-    image: "https://i.pravatar.cc/150?img=32",
+    avatar: "https://i.pravatar.cc/150?img=32",
   },
   {
     id: 3,
     name: "Priya Nair",
     location: "UAE",
     rating: 5,
-    review:
+    text:
       "We did a Kathmandu + Pokhara tour. Super smooth logistics and thoughtful local experiences. Exactly what we wanted.",
-    image: "https://i.pravatar.cc/150?img=47",
+    avatar: "https://i.pravatar.cc/150?img=47",
   },
 ];
 
