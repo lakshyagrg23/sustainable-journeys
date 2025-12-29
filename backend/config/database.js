@@ -61,22 +61,40 @@
 // };
 
 
-module.exports = ({ env }) => ({
-  connection: {
-    client: env("DATABASE_CLIENT", "sqlite"),
-    connection:
-      env("DATABASE_CLIENT") === "postgres"
-        ? {
-            host: env("DATABASE_HOST"),
-            port: env.int("DATABASE_PORT", 5432),
-            database: env("DATABASE_NAME"),
-            user: env("DATABASE_USERNAME"),
-            password: env("DATABASE_PASSWORD"),
-            ssl: env.bool("DATABASE_SSL", true),
-          }
-        : {
-            filename: env("DATABASE_FILENAME", ".tmp/data.db"),
-          },
-    useNullAsDefault: env("DATABASE_CLIENT") === "sqlite",
-  },
-});
+module.exports = ({ env }) => {
+  const client = env("DATABASE_CLIENT", "sqlite");
+  const isPostgres = client === "postgres";
+
+  // Render/Postgres often uses a self-signed cert; allow opting out of strict checks.
+  const ssl =
+    env.bool("DATABASE_SSL", false) && {
+      rejectUnauthorized: env.bool("DATABASE_SSL_REJECT_UNAUTHORIZED", false),
+      ca: env("DATABASE_CA") || undefined,
+    };
+
+  const connection = isPostgres
+    ? env("DATABASE_URL")
+      ? {
+          connectionString: env("DATABASE_URL"),
+          ssl,
+        }
+      : {
+          host: env("DATABASE_HOST"),
+          port: env.int("DATABASE_PORT", 5432),
+          database: env("DATABASE_NAME"),
+          user: env("DATABASE_USERNAME"),
+          password: env("DATABASE_PASSWORD"),
+          ssl,
+        }
+    : {
+        filename: env("DATABASE_FILENAME", ".tmp/data.db"),
+      };
+
+  return {
+    connection: {
+      client,
+      connection,
+      useNullAsDefault: client === "sqlite",
+    },
+  };
+};
