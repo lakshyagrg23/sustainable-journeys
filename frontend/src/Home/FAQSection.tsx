@@ -8,36 +8,48 @@ interface FaqItem {
   keywords: string;
 }
 
-const faqData = [
+const faqData: FaqItem[] = [
   {
+    icon: "🥾",
     question: "What’s the best time to visit Nepal for trekking?",
     answer:
       "For most treks, Spring (Mar–May) and Autumn (Sep–Nov) are ideal: stable weather, clear views, and comfortable trail conditions. Winter can be great for lower-altitude routes, while monsoon months are better for certain rain-shadow areas.",
+    keywords: "best time season trekking spring autumn monsoon winter weather Nepal",
   },
   {
+    icon: "🪪",
     question: "Do I need permits for treks like Everest/Annapurna?",
     answer:
       "Yes—most trekking regions require permits (like TIMS or region permits, depending on route). We’ll guide you on what’s required based on your selected itinerary and handle the process where possible.",
+    keywords: "permits TIMS everest annapurna entry fees paperwork rules",
   },
   {
+    icon: "🩺",
     question: "How do you handle altitude and safety?",
     answer:
       "We plan acclimatization properly, keep daily altitude gains sensible, and set realistic pacing. We also recommend hydration, rest, and monitoring symptoms. For high-altitude routes, we plan buffer days and provide clear safety guidance.",
+    keywords: "altitude sickness safety acclimatization health pace rest hydration",
   },
   {
+    icon: "💪",
     question: "What fitness level is required for treks?",
     answer:
       "Easy routes can be done with basic fitness. Moderate routes need regular walking/cardio preparation. Challenging routes (like EBC) benefit from consistent training and hiking practice. We can suggest a simple training plan based on your trek.",
+    keywords: "fitness training difficulty easy moderate challenging ebc preparation",
   },
   {
+    icon: "✅",
     question: "What’s included in your trips?",
     answer:
       "Inclusions depend on the trip: guide support, accommodation, transport, permits assistance, and itinerary planning. Each trip page lists inclusions/exclusions clearly. We can also customize to include porters or upgrade stays.",
+    keywords: "inclusions accommodation transport guide permits meals porter upgrade",
   },
   {
+    icon: "🧭",
     question: "Can you customize the itinerary?",
     answer:
       "Yes. You can choose a private trip, add rest days, adjust comfort levels, add cultural experiences, or combine regions (e.g., Kathmandu + Pokhara + Chitwan).",
+    keywords: "custom itinerary private trip rest days comfort cultural experiences kathmandu pokhara chitwan",
   },
 ];
 
