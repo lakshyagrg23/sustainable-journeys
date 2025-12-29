@@ -90,6 +90,14 @@ const Navbar = () => {
     href: string;
   }
 
+  interface NavLink {
+    href: string;
+    label: string;
+    hasDropdown: boolean;
+    dropdown?: DropdownItem[];
+    isIslandsDropdown?: boolean;
+  }
+
   // Islands data with all locations and attractions
   const islandsData = [
     {
@@ -236,7 +244,7 @@ const Navbar = () => {
   //   href: `/${island.documentId}` // Use documentId directly
   // })) || [];
 
-const navLinks = [
+const navLinks: NavLink[] = [
   { href: "/treks", label: "Treks", hasDropdown: false },
   { href: "/tours", label: "Tours", hasDropdown: false },
   { href: "/regions", label: "Regions", hasDropdown: false },
