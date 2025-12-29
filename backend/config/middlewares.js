@@ -4,7 +4,7 @@ module.exports = [
     config: {
       origin: [
         "http://localhost:3000",
-        "https://.vercel.app",
+        "https://sustainable-journeys-ujl8.vercel.app/",
         // add custom domain later too
       ],
       headers: "*",
